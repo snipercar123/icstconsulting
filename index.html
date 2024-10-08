@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illinois Center for School Transformation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            float: left;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .logo .c {
+            color: #4a90e2;
+        }
+        nav {
+            float: right;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #4a90e2;
+        }
+        .hero {
+            background: url('path/to/your/image.jpg') no-repeat center center/cover;
+            text-align: center;
+            padding: 4rem 0;
+            color: white; /* Change text color for contrast */
+        }
+        .hero h1 {
+            margin-bottom: 0.5rem;
+            animation: fadeInDown 1s ease forwards;
+            opacity: 0;
+        }
+        .hero p {
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            margin-top: 1rem;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+        .partners, .testimonials, .about, .services {
+            padding: 2rem 0;
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+        .partners h2, .testimonials h2, .about h2, .services h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .partner-logos, .testimonials-container {
+            display: flex;
+            overflow-x: hidden; /* Hide the scroll bar */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap; /* Ensure items stay inline */
+        }
+        .partner-logo, .testimonial {
+            flex: 0 0 auto;
+            width: 100px;
+            height: 100px;
+            background: #ddd;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        .testimonial {
+            flex: 0 0 auto;
+            width: 300px;
+            margin-right: 1rem;
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: #f0f0f0;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+            nav {
+                float: none;
+                text-align: center;
+            }
+            nav ul {
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            .partner-logo {
+                width: 80px;
+                height: 80px;
+            }
+            .testimonial {
+                width: 90%;
+            }
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">I<span class="c">C</span>ST</div>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Illinois Center for School Transformation</h1>
+            <p>Learning is for everyone</p>
+            <a href="#" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>The Illinois Center for School Transformation is dedicated to improving educational outcomes for students through innovative approaches and collaboration with schools and communities. Our team of experts provides resources and support to empower educators and engage students.</p>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>We offer a range of services designed to enhance educational experiences, including:</p>
+            <ul>
+                <li>Professional Development for Educators</li>
+                <li>Curriculum Development Support</li>
+                <li>Data Analysis and Strategy Implementation</li>
+                <li>Community Engagement Initiatives</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="container">
+            <h2>Our Partners</h2>
+            <div class="partner-logos">
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <h3>Mike Johnson</h3>
+                    <p>Thanks to ICST, we've seen a significant improvement in student engagement and performance.</p>
+                </div>
+                <div class="testimonial">
+                    <h3>John Doe</h3>
+                    <p>ICST has transformed our school's approach to learning. The results have been amazing!</p>
+                </div>
+                <div class="testimonial">
+                    <h3>Jane Smith</h3>
+                    <p>The resources and support provided by ICST have been invaluable to our teachers and students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Illinois Center for School Transformation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for partner logos and testimonials
+        const partnerLogos = document.querySelector('.partner-logos');
+        const testimonials = document.querySelector('.testimonials-container');
+
+        function autoScroll(element) {
+            element.scrollLeft += 1; // Scroll by 1px each interval
+            if (element.scrollLeft >= element.scrollWidth - element.clientWidth) {
+                element.scrollLeft = 0; // Reset scroll to the beginning
+            }
+        }
+
+        setInterval(() => autoScroll(partnerLogos), 30); // Speed up scroll for a smooth effect
+        setInterval(() => autoScroll(testimonials), 30); // Speed up scroll for testimonials
+
+        // Add fade-in effect for sections
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const triggerBottom = window.innerHeight / 5 * 4;
+
+            sections.forEach(section => {
