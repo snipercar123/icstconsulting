@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Illinois Center for School Transformation</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
+        body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
         .container {
             width: 80%;
@@ -17,192 +17,140 @@
             overflow: hidden;
         }
         header {
-            background: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo {
-            float: left;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .logo .c {
-            color: #4a90e2;
+            background: #f4f4f4;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         nav {
-            float: right;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         nav ul {
-            list-style-type: none;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
         nav ul li {
-            display: inline;
-            margin-left: 20px;
+            position: relative;
+            padding: 0 15px;
         }
         nav ul li a {
             text-decoration: none;
             color: #333;
-            transition: color 0.3s ease;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background 0.3s, color 0.3s;
         }
         nav ul li a:hover {
-            color: #4a90e2;
+            background: #4a90e2;
+            color: white;
+            border-radius: 5px;
+        }
+        .logo {
+            width: 100px;
+            height: 50px;
         }
         .hero {
-            background: url('path/to/your/image.jpg') no-repeat center center/cover;
+            background: #e8e8e8;
             text-align: center;
-            padding: 4rem 0;
-            color: white; /* Change text color for contrast */
-        }
-        .hero h1 {
-            margin-bottom: 0.5rem;
-            animation: fadeInDown 1s ease forwards;
-            opacity: 0;
-        }
-        .hero p {
-            animation: fadeInUp 1s ease forwards;
-            opacity: 0;
+            padding: 2rem;
         }
         .cta-button {
             display: inline-block;
             background: #333;
             color: #fff;
-            padding: 0.5rem 1rem;
+            padding: 10px 20px;
             text-decoration: none;
-            margin-top: 1rem;
-            animation: fadeInUp 1s ease forwards;
-            opacity: 0;
+            border-radius: 5px;
+            transition: background 0.3s; /* Smooth transition */
         }
-        .partners, .testimonials, .about, .services {
-            padding: 2rem 0;
-            animation: fadeIn 1s ease forwards;
-            opacity: 0;
+        .cta-button:hover {
+            background: #4a90e2; /* Change to blue on hover */
+            color: white; /* Optional: change text color */
         }
-        .partners h2, .testimonials h2, .about h2, .services h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
+        .partners {
+            margin: 2rem 0;
+            overflow: hidden;
         }
-        .partner-logos, .testimonials-container {
+        .partner-logos {
             display: flex;
-            overflow-x: hidden; /* Hide the scroll bar */
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            white-space: nowrap; /* Ensure items stay inline */
+            animation: moveRight 20s linear infinite;
         }
-        .partner-logo, .testimonial {
-            flex: 0 0 auto;
-            width: 100px;
-            height: 100px;
+        .partner-logo {
+            width: 50px;
+            height: 50px;
             background: #ddd;
             border-radius: 50%;
-            margin-right: 1rem;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        @keyframes moveRight {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-80px * 6)); /* Adjusted to stop closer to the side */
+            }
+        }
+        .testimonials {
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        .testimonials-container {
+            display: flex;
+            animation: moveRightTestimonials 30s linear infinite;
+        }
+        @keyframes moveRightTestimonials {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 2)); /* Adjusted to stop closer to the side */
+            }
         }
         .testimonial {
-            flex: 0 0 auto;
+            flex-shrink: 0;
             width: 300px;
-            margin-right: 1rem;
-            background: #f9f9f9;
+            background: #f4f4f4;
             padding: 1rem;
+            margin-right: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        footer {
-            background: #f0f0f0;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 600px) {
-            .container {
-                width: 90%;
-            }
-            nav {
-                float: none;
-                text-align: center;
-            }
-            nav ul {
-                display: block;
-                margin: 0;
-                padding: 0;
-            }
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            .partner-logo {
-                width: 80px;
-                height: 80px;
-            }
-            .testimonial {
-                width: 90%;
-            }
-        }
-
-        /* Animation keyframes */
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        @keyframes fadeInDown {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">I<span class="c">C</span>ST</div>
-            <nav aria-label="Main Navigation">
+            <nav>
+                <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+                  <style>
+                    .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+                    .letter { fill: #333; }
+                    .letter-c { fill: #4a90e2; }
+                  </style>
+                  <g class="logo-text">
+                    <text x="10" y="70" font-size="60" class="letter">I</text>
+                    <text x="40" y="70" font-size="60" class="letter-c">C</text>
+                    <text x="95" y="70" font-size="60" class="letter">ST</text>
+                  </g>
+                  <path d="M35 75 Q 50 85, 65 75" stroke="#333" stroke-width="3" fill="none"/>
+                </svg>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" onclick="navigateTo('Home')">Home</a></li>
+                    <li><a href="#" onclick="navigateTo('Services')">Our Services</a></li>
+                    <li><a href="#" onclick="navigateTo('Contact')">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container">
-            <h1>Illinois Center for School Transformation</h1>
+            <h2>Illinois Center for School Transformation</h2>
             <p>Learning is for everyone</p>
             <a href="#" class="cta-button">Learn More</a>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>The Illinois Center for School Transformation is dedicated to improving educational outcomes for students through innovative approaches and collaboration with schools and communities. Our team of experts provides resources and support to empower educators and engage students.</p>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p>We offer a range of services designed to enhance educational experiences, including:</p>
-            <ul>
-                <li>Professional Development for Educators</li>
-                <li>Curriculum Development Support</li>
-                <li>Data Analysis and Strategy Implementation</li>
-                <li>Community Engagement Initiatives</li>
-            </ul>
         </div>
     </section>
 
@@ -218,20 +166,23 @@
                 <div class="partner-logo"></div>
                 <div class="partner-logo"></div>
                 <div class="partner-logo"></div>
+                <!-- Duplicate logos for seamless animation -->
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
                 <div class="partner-logo"></div>
                 <div class="partner-logo"></div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
+    <section class="testimonials">
         <div class="container">
             <h2>Testimonials</h2>
             <div class="testimonials-container">
-                <div class="testimonial">
-                    <h3>Mike Johnson</h3>
-                    <p>Thanks to ICST, we've seen a significant improvement in student engagement and performance.</p>
-                </div>
                 <div class="testimonial">
                     <h3>John Doe</h3>
                     <p>ICST has transformed our school's approach to learning. The results have been amazing!</p>
@@ -239,6 +190,23 @@
                 <div class="testimonial">
                     <h3>Jane Smith</h3>
                     <p>The resources and support provided by ICST have been invaluable to our teachers and students.</p>
+                </div>
+                <div class="testimonial">
+                    <h3>Mike Johnson</h3>
+                    <p>Thanks to ICST, we've seen a significant improvement in student engagement and performance.</p>
+                </div>
+                <!-- Duplicate testimonials for seamless animation -->
+                <div class="testimonial">
+                    <h3>John Doe</h3>
+                    <p>ICST has transformed our school's approach to learning. The results have been amazing!</p>
+                </div>
+                <div class="testimonial">
+                    <h3>Jane Smith</h3>
+                    <p>The resources and support provided by ICST have been invaluable to our teachers and students.</p>
+                </div>
+                <div class="testimonial">
+                    <h3>Mike Johnson</h3>
+                    <p>Thanks to ICST, we've seen a significant improvement in student engagement and performance.</p>
                 </div>
             </div>
         </div>
@@ -251,23 +219,10 @@
     </footer>
 
     <script>
-        // Add smooth scrolling for partner logos and testimonials
-        const partnerLogos = document.querySelector('.partner-logos');
-        const testimonials = document.querySelector('.testimonials-container');
-
-        function autoScroll(element) {
-            element.scrollLeft += 1; // Scroll by 1px each interval
-            if (element.scrollLeft >= element.scrollWidth - element.clientWidth) {
-                element.scrollLeft = 0; // Reset scroll to the beginning
-            }
+        function navigateTo(page) {
+            alert("Navigating to " + page);
+            // Here you would implement the actual navigation logic
         }
-
-        setInterval(() => autoScroll(partnerLogos), 30); // Speed up scroll for a smooth effect
-        setInterval(() => autoScroll(testimonials), 30); // Speed up scroll for testimonials
-
-        // Add fade-in effect for sections
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const triggerBottom = window.innerHeight / 5 * 4;
-
-            sections.forEach(section => {
+    </script>
+</body>
+</html>
