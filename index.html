@@ -24,14 +24,16 @@
         }
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Center the nav horizontally */
             align-items: center;
+            flex-direction: column; /* Arrange logo and menu items in a column */
         }
         nav ul {
             display: flex;
             list-style: none;
             margin: 0;
             padding: 0;
+            justify-content: center; /* Center the list of menu items */
         }
         nav ul li {
             position: relative;
@@ -52,6 +54,7 @@
         .logo {
             width: 100px;
             height: 50px;
+            margin-bottom: 10px; /* Add space between the logo and the menu */
         }
         .hero {
             background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://example.com/hero-background.jpg') no-repeat center center/cover; /* Light background with a subtle image */
@@ -244,8 +247,6 @@
                 <!-- Duplicate logos for seamless animation -->
                 <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 1"></div>
                 <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 2"></div>
-                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 3"></div>
-                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 4"></div>
             </div>
         </div>
     </section>
@@ -276,9 +277,20 @@
                     <p>"Their consulting services helped us improve student outcomes significantly."</p>
                     <p>- Teacher Johnson</p>
                 </div>
-                <!-- Add more testimonials as needed -->
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Illinois Center for School Transformation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function navigateTo(page) {
+            alert("Navigating to " + page);
+        }
+    </script>
 </body>
 </html>
