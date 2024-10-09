@@ -10,6 +10,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            background-color: #f0f8ff; /* Light blue background for the entire page */
         }
         .container {
             width: 80%;
@@ -17,7 +18,7 @@
             overflow: hidden;
         }
         header {
-            background: #f4f4f4;
+            background: #e0f7fa; /* Light blue header */
             padding: 1rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -44,7 +45,7 @@
             transition: background 0.3s, color 0.3s;
         }
         nav ul li a:hover {
-            background: #4a90e2;
+            background: #4a90e2; /* Blue hover effect */
             color: white;
             border-radius: 5px;
         }
@@ -53,22 +54,71 @@
             height: 50px;
         }
         .hero {
-            background: #e8e8e8;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://example.com/hero-background.jpg') no-repeat center center/cover; /* Light background with a subtle image */
+            color: #333; /* Dark text for contrast */
             text-align: center;
-            padding: 2rem;
+            padding: 4rem 2rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            animation: fadeInUp 1.2s ease;
         }
         .cta-button {
             display: inline-block;
-            background: #333;
+            background: #4a90e2; /* Light blue button */
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 25px;
+            font-size: 1.2rem;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s; /* Smooth transition */
+            border-radius: 50px;
+            transition: background 0.4s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.4s ease;
         }
         .cta-button:hover {
-            background: #4a90e2; /* Change to blue on hover */
-            color: white; /* Optional: change text color */
+            background: #357ABD; /* Darker blue on hover */
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+        }
+        /* Animation Keyframes */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
         .partners {
             margin: 2rem 0;
@@ -79,20 +129,45 @@
             animation: moveRight 20s linear infinite;
         }
         .partner-logo {
-            width: 50px;
-            height: 50px;
-            background: #ddd;
-            border-radius: 50%;
             margin-right: 30px;
             flex-shrink: 0;
+        }
+        .partner-logo img {
+            width: 50px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%; /* Optional: rounded logos */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         @keyframes moveRight {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-80px * 6)); /* Adjusted to stop closer to the side */
+                transform: translateX(calc(-80px * 6));
             }
+        }
+        .services {
+            background: #e0f7fa; /* Light blue background for services */
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .services-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .service {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem;
+            width: 200px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .testimonials {
             margin: 2rem 0;
@@ -107,13 +182,13 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-300px * 2)); /* Adjusted to stop closer to the side */
+                transform: translateX(calc(-300px * 2));
             }
         }
         .testimonial {
             flex-shrink: 0;
             width: 300px;
-            background: #f4f4f4;
+            background: #e0f7fa; /* Light blue background for testimonials */
             padding: 1rem;
             margin-right: 20px;
             border-radius: 5px;
@@ -158,23 +233,33 @@
         <div class="container">
             <h2>Our Partners</h2>
             <div class="partner-logos">
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 1"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 2"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 3"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 4"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 5"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 6"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 7"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 8"></div>
                 <!-- Duplicate logos for seamless animation -->
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 1"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 2"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 3"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-list">
+                <div class="service">Consulting Services</div>
+                <div class="service">Professional Development</div>
+                <div class="service">Curriculum Design</div>
+                <div class="service">Data Analysis</div>
+                <div class="service">Strategic Planning</div>
+                <div class="service">Community Engagement</div>
             </div>
         </div>
     </section>
@@ -184,45 +269,16 @@
             <h2>Testimonials</h2>
             <div class="testimonials-container">
                 <div class="testimonial">
-                    <h3>John Doe</h3>
-                    <p>ICST has transformed our school's approach to learning. The results have been amazing!</p>
+                    <p>"The Illinois Center for School Transformation has greatly impacted our school!"</p>
+                    <p>- Principal Smith</p>
                 </div>
                 <div class="testimonial">
-                    <h3>Jane Smith</h3>
-                    <p>The resources and support provided by ICST have been invaluable to our teachers and students.</p>
+                    <p>"Their consulting services helped us improve student outcomes significantly."</p>
+                    <p>- Teacher Johnson</p>
                 </div>
-                <div class="testimonial">
-                    <h3>Mike Johnson</h3>
-                    <p>Thanks to ICST, we've seen a significant improvement in student engagement and performance.</p>
-                </div>
-                <!-- Duplicate testimonials for seamless animation -->
-                <div class="testimonial">
-                    <h3>John Doe</h3>
-                    <p>ICST has transformed our school's approach to learning. The results have been amazing!</p>
-                </div>
-                <div class="testimonial">
-                    <h3>Jane Smith</h3>
-                    <p>The resources and support provided by ICST have been invaluable to our teachers and students.</p>
-                </div>
-                <div class="testimonial">
-                    <h3>Mike Johnson</h3>
-                    <p>Thanks to ICST, we've seen a significant improvement in student engagement and performance.</p>
-                </div>
+                <!-- Add more testimonials as needed -->
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Illinois Center for School Transformation. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function navigateTo(page) {
-            alert("Navigating to " + page);
-            // Here you would implement the actual navigation logic
-        }
-    </script>
 </body>
 </html>
