@@ -14,7 +14,7 @@
             color: #ffffff; /* White text for readability */
         }
         .container {
-            width: 80%;
+            width: 90%; /* Increased width for container */
             margin: auto;
             overflow: hidden;
         }
@@ -35,7 +35,6 @@
             padding: 0;
         }
         nav ul li {
-            position: relative;
             padding: 0 15px;
         }
         nav ul li a {
@@ -49,10 +48,6 @@
             background: #4a90e2; /* Blue hover effect */
             color: #ffffff;
             border-radius: 5px;
-        }
-        .logo {
-            width: 100px;
-            height: 50px;
         }
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://example.com/hero-background.jpg') no-repeat center center/cover;
@@ -127,14 +122,14 @@
         }
         .partner-logos {
             display: flex;
-            animation: moveRight 20s linear infinite;
+            animation: moveRight 15s linear infinite;
         }
         .partner-logo {
-            margin-right: 30px;
+            margin-right: 20px;
             flex-shrink: 0;
         }
         .partner-logo img {
-            width: 50px;
+            width: 80px; /* Increased logo size */
             height: auto;
             border-radius: 50%;
             box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
@@ -144,7 +139,7 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-80px * 6));
+                transform: translateX(calc(-100px * 6)); /* Adjusted for smooth scroll */
             }
         }
         .services {
@@ -166,10 +161,15 @@
             background: #222222; /* Darker grey service boxes */
             border: 1px solid #444;
             border-radius: 5px;
-            padding: 1rem;
+            padding: 1.5rem; /* Increased padding for larger boxes */
             margin: 1rem;
-            width: 200px;
+            width: 250px; /* Larger service boxes */
+            height: 250px;
             box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+        }
+        .service h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
         .testimonials {
             margin: 2rem 0;
@@ -177,14 +177,14 @@
         }
         .testimonials-container {
             display: flex;
-            animation: moveRightTestimonials 30s linear infinite;
+            animation: moveRightTestimonials 20s linear infinite;
         }
         @keyframes moveRightTestimonials {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-300px * 2));
+                transform: translateX(calc(-300px * 4)); /* Adjusted to fit 4 testimonials */
             }
         }
         .testimonial {
@@ -236,12 +236,12 @@
         <div class="container">
             <h2>Our Partners</h2>
             <div class="partner-logos">
-                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 1"></div>
-                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 2"></div>
-                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 3"></div>
-                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 4"></div>
-                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 5"></div>
-                <div class="partner-logo"><img src="https://via.placeholder.com/50" alt="Partner 6"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/80" alt="Partner 1"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/80" alt="Partner 2"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/80" alt="Partner 3"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/80" alt="Partner 4"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/80" alt="Partner 5"></div>
+                <div class="partner-logo"><img src="https://via.placeholder.com/80" alt="Partner 6"></div>
             </div>
         </div>
     </section>
@@ -252,15 +252,27 @@
             <div class="services-list">
                 <div class="service">
                     <h3>Service 1</h3>
-                    <p>Details about service 1.</p>
+                    <p>Comprehensive training programs for educators.</p>
                 </div>
                 <div class="service">
                     <h3>Service 2</h3>
-                    <p>Details about service 2.</p>
+                    <p>Customized solutions for district improvement.</p>
                 </div>
                 <div class="service">
                     <h3>Service 3</h3>
-                    <p>Details about service 3.</p>
+                    <p>Data-driven instruction methodologies.</p>
+                </div>
+                <div class="service">
+                    <h3>Service 4</h3>
+                    <p>Student assessment and intervention strategies.</p>
+                </div>
+                <div class="service">
+                    <h3>Service 5</h3>
+                    <p>Collaborative team-based improvement models.</p>
+                </div>
+                <div class="service">
+                    <h3>Service 6</h3>
+                    <p>Ongoing coaching and professional development.</p>
                 </div>
             </div>
         </div>
@@ -275,6 +287,12 @@
                 </div>
                 <div class="testimonial">
                     <p>"Thanks to ICST, we’ve seen remarkable improvements in student outcomes."</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Their data-driven methods truly work!"</p>
+                </div>
+                <div class="testimonial">
+                    <p>"We highly recommend ICST for school improvement initiatives!"</p>
                 </div>
             </div>
         </div>
