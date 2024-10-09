@@ -116,17 +116,17 @@
                 opacity: 1;
             }
         }
-        .partners, .testimonials {
+        .partners {
             margin: 2rem 0;
             overflow: hidden;
             white-space: nowrap;
             width: 100vw;
         }
-        .partner-logos, .testimonials-container {
+        .partner-logos {
             display: inline-flex;
             animation: scrollLeft 30s linear infinite;
         }
-        .partner-logo, .testimonial {
+        .partner-logo {
             display: inline-block;
             margin-right: 30px;
         }
@@ -173,6 +173,46 @@
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
+        .testimonials {
+            background-color: #222222;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .testimonial {
+            background: #333333;
+            padding: 1.5rem;
+            margin: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            width: 300px;
+        }
+        .testimonials-container {
+            display: flex;
+            justify-content: center;
+            animation: scrollTestimonial 40s linear infinite;
+        }
+        .testimonial p {
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+        @keyframes scrollTestimonial {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        svg.logo {
+            width: 120px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -218,30 +258,29 @@
                 <div class="partner-logo"><img src="https://via.placeholder.com/100" alt="Partner 3"></div>
                 <div class="partner-logo"><img src="https://via.placeholder.com/100" alt="Partner 4"></div>
                 <div class="partner-logo"><img src="https://via.placeholder.com/100" alt="Partner 5"></div>
-                <div class="partner-logo"><img src="https://via.placeholder.com/100" alt="Partner 6"></div>
             </div>
         </div>
     </section>
 
     <section class="services">
         <div class="container">
-            <h2>What We Offer</h2>
+            <h2>Our Services</h2>
             <div class="services-list">
                 <div class="service">
                     <h3>Service 1</h3>
-                    <p>Comprehensive training programs for educators.</p>
+                    <p>Comprehensive school diagnostics and needs assessment.</p>
                 </div>
                 <div class="service">
                     <h3>Service 2</h3>
-                    <p>Customized solutions for district improvement.</p>
+                    <p>Data-driven decision-making and goal setting.</p>
                 </div>
                 <div class="service">
                     <h3>Service 3</h3>
-                    <p>Data-driven instruction methodologies.</p>
+                    <p>Professional development workshops and training.</p>
                 </div>
                 <div class="service">
                     <h3>Service 4</h3>
-                    <p>Student assessment and intervention strategies.</p>
+                    <p>Strategic planning and implementation support.</p>
                 </div>
                 <div class="service">
                     <h3>Service 5</h3>
