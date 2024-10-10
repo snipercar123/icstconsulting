@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation | ICST</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background: #111;
+            padding: 1rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            margin: 2rem auto;
+        }
+        .booking-section {
+            background: #111;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+        .booking-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .booking-form label {
+            margin: 10px 0 5px;
+        }
+        .booking-form input, 
+        .booking-form select, 
+        .booking-form textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #222;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .booking-form input[type="submit"] {
+            background: #4a90e2;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s ease;
+        }
+        .booking-form input[type="submit"]:hover {
+            background: #357ABD;
+        }
+        .calendar-section {
+            margin-top: 2rem;
+        }
+        /* Calendar styling */
+        .calendar {
+            background: #222;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .calendar h3 {
+            font-size: 1.5rem;
+            color: #4a90e2;
+        }
+        .calendar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .calendar ul li {
+            background: #333;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booking.html">Book a Consultation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="booking-section">
+            <h2>Book a Consultation</h2>
+            <form class="booking-form" id="bookingForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="date">Consultation Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="time">Consultation Time:</label>
+                <input type="time" id="time" required>
+
+                <label for="service">Service:</label>
+                <select id="service" required>
+                    <option value="Consulting">Consulting</option>
+                    <option value="Professional Development">Professional Development</option>
+                    <option value="Curriculum Design">Curriculum Design</option>
+                    <option value="Data Analysis">Data Analysis</option>
+                    <option value="Strategic Planning">Strategic Planning</option>
+                </select>
+
+                <label for="message">Additional Information:</label>
+                <textarea id="message" rows="4"></textarea>
+
+                <input type="submit" value="Book Consultation">
+            </form>
+        </section>
+
+        <section class="calendar-section">
+            <div class="calendar">
+                <h3>Your Booked Consultations</h3>
+                <ul id="calendarList"></ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            // Store the booking details
+            const booking = {
+                name,
+                email,
+                date,
+                time,
+                service,
+                message
+            };
+
+            // Get existing bookings from localStorage or initialize an empty array
+            let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+            bookings.push(booking);
+            
+            // Save the updated bookings list to localStorage
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+
+            // Update the calendar view
+            updateCalendar();
+
+            // Reset the form
+            document.getElementById('bookingForm').reset();
+        });
+
+        // Function to update the calendar view
+        function updateCalendar() {
+            const calendarList = document.getElementById('calendarList');
+            calendarList.innerHTML = '';
+
+            // Get bookings from localStorage
+            const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+
+            // Display each booking as a list item
+            bookings.forEach(booking => {
+                const li = document.createElement('li');
+                li.textContent = `${booking.name} - ${booking.service} on ${booking.date} at ${booking.time}`;
+                calendarList.appendChild(li);
+            });
+        }
+
+        // Initial load of calendar view
+        updateCalendar();
+    </script>
+</body>
+</html>
